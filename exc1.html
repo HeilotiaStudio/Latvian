@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Latvian Pronouns — Interactive Practice</title>
+<style>
+  @page { size: A4; margin: 15mm; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #1a1a1a; line-height: 1.45; font-size: 10pt;
+    max-width: 900px; margin: 0 auto; padding: 20px;
+  }
+  h1 { font-size: 20pt; color: #003366; border-bottom: 2px solid #003366;
+       padding-bottom: 5px; margin-top: 0; margin-bottom: 5px; }
+  .subtitle { font-size: 11pt; color: #555; margin-bottom: 20px; font-weight: bold; }
+  h2 { font-size: 14pt; color: #003366; margin-top: 26px;
+       border-bottom: 1px solid #ccc; padding-bottom: 3px; }
+  h3 { font-size: 11pt; color: #2b6cb0; margin-top: 12px; margin-bottom: 4px; }
+  p { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  th, td { border: 1px solid #cccccc; padding: 5px 8px; text-align: left; font-size: 9pt; }
+  th { background-color: #f0f4f8; color: #003366; font-weight: bold; }
+  .callout { background-color: #f9f9f9; border-left: 4px solid #003366;
+             padding: 6px 10px; margin: 8px 0; font-size: 9.5pt; }
+  .exercise { background-color: #fafafa; border: 1px dashed #aaa;
+              padding: 10px 14px; margin: 12px 0; border-radius: 4px; }
+  .exercise h4 { margin-top: 0; margin-bottom: 8px; color: #003366; font-size: 10.5pt; }
+  ol { margin-top: 3px; margin-bottom: 8px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  input.answer {
+    border: none; border-bottom: 1.5px solid #333; background: transparent;
+    font-family: inherit; font-size: 10pt; padding: 1px 4px; min-width: 90px;
+    outline: none; transition: background 0.2s;
+  }
+  input.answer:focus { background: #fffbe6; border-bottom-color: #003366; }
+  input.answer.correct { border-bottom-color: #1a7f37; background: #e6f4ea; color: #1a7f37; }
+  input.answer.wrong   { border-bottom-color: #c62828; background: #fdecea; color: #c62828; }
+  input.answer-wide { min-width: 220px; }
+  .feedback { font-size: 8.5pt; margin-left: 6px; font-weight: bold; }
+  .feedback.ok { color: #1a7f37; }
+  .feedback.no { color: #c62828; }
+  .btn-row { margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; }
+  button {
+    font-family: inherit; font-size: 9pt; padding: 5px 12px; border-radius: 4px;
+    border: 1px solid #003366; background: #003366; color: #fff; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: #003366; }
+  button:hover { opacity: 0.85; }
+  .score { font-size: 9.5pt; font-weight: bold; margin-top: 8px; color: #003366; }
+  .hint { font-size: 9pt; color: #666; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<h1>Latvian Pronouns — Interactive Practice</h1>
+<div class="subtitle">I · you · we · he · she · they — and the object forms (me, him, her, them)</div>
+
+<div class="callout">
+  <strong>How to use:</strong> type your answer in each blank, then press <em>Check answers</em> under the exercise.
+  Accents and case are ignored (you can type <em>abol</em> for <em>ābols</em>), but the actual word must be right —
+  <em>mani</em> and <em>man</em> are different answers.
+</div>
+
+<div class="callout">
+  <strong>Why pronouns look "different" in different sentences:</strong> English uses the same word <em>me</em>
+  for both "he sees <strong>me</strong>" and "he gives <strong>me</strong> a book." Latvian does not. It uses a
+  <strong>direct-object form</strong> (accusative) for the first, and an <strong>indirect-object form</strong> (dative)
+  for the second. This sheet teaches both, separately.
+</div>
+
+<!-- ================= 1. SUBJECT PRONOUNS ================= -->
+<h2>1. Subject Pronouns (who does the action)</h2>
+
+<table>
+  <thead><tr><th>English</th><th>Latvian</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>I</td><td><strong>es</strong></td><td>Always lowercase in Latvian (unless first word of a sentence).</td></tr>
+    <tr><td>you (singular, informal)</td><td><strong>tu</strong></td><td>Used with friends, family, children, peers.</td></tr>
+    <tr><td>you (singular, formal / plural)</td><td><strong>jūs</strong></td><td>Used with strangers, elders, professionals; also plural "you all."</td></tr>
+    <tr><td>he</td><td><strong>viņš</strong></td><td>Masculine singular.</td></tr>
+    <tr><td>she</td><td><strong>viņa</strong></td><td>Feminine singular.</td></tr>
+    <tr><td>we</td><td><strong>mēs</strong></td><td>—</td></tr>
+    <tr><td>they (masc. or mixed group)</td><td><strong>viņi</strong></td><td>Use if at least one male is in the group.</td></tr>
+    <tr><td>they (all female)</td><td><strong>viņas</strong></td><td>Only when every person is female.</td></tr>
+  </tbody>
+</table>
+
+<div class="exercise" id="ex1">
+  <h4>Exercise 1 — Choose the correct subject pronoun</h4>
+  <ol>
+    <li>(I) <input class="answer" data-answer="es"> mācos latviešu valodu.</li>
+    <li>(You - informal) <input class="answer" data-answer="tu"> esi no Vjetnamas.</li>
+    <li>(He) <input class="answer" data-answer="viņš|vins"> strādā Rīgā.</li>
+    <li>(She) <input class="answer" data-answer="viņa|vina"> runā latviski.</li>
+    <li>(We) <input class="answer" data-answer="mēs|mes"> dzīvojam Hanojā.</li>
+    <li>(They - two women) <input class="answer" data-answer="viņas|vinas"> ir studentes.</li>
+    <li>(They - mixed group) <input class="answer" data-answer="viņi|vini"> ir studenti.</li>
+    <li>(You - formal, to a teacher) <input class="answer" data-answer="jūs|jus"> esat skolotājs.</li>
+  </ol>
+  <div class="btn-row">
+    <button onclick="checkExercise('ex1')">Check answers</button>
+    <button class="secondary" onclick="revealExercise('ex1')">Show all answers</button>
+    <button class="secondary" onclick="resetExercise('ex1')">Reset</button>
+  </div>
+  <div class="score" id="ex1-score"></div>
+</div>
+
+<!-- ================= 2. ACCUSATIVE ================= -->
+<h2>2. Direct-Object Pronouns (accusative — "whom do I see / like / have?")</h2>
+
+<p>Used after verbs like <em>redzēt</em> (to see), <em>mīlēt</em> (to love), <em>gaidīt</em> (to wait for), <em>pazīt</em> (to know a person).</p>
+
+<table>
+  <thead><tr><th>English</th><th>Latvian</th><th>Example</th><th>Translation</th></tr></thead>
+  <tbody>
+    <tr><td>me</td><td><strong>mani</strong></td><td>Viņš redz <strong>mani</strong>.</td><td>He sees me.</td></tr>
+    <tr><td>you (sg.)</td><td><strong>tevi</strong></td><td>Es gaidu <strong>tevi</strong>.</td><td>I am waiting for you.</td></tr>
+    <tr><td>you (formal / pl.)</td><td><strong>jūs</strong></td><td>Es redzu <strong>jūs</strong>.</td><td>I see you.</td></tr>
+    <tr><td>him</td><td><strong>viņu</strong></td><td>Es pazīstu <strong>viņu</strong>.</td><td>I know him.</td></tr>
+    <tr><td>her</td><td><strong>viņu</strong></td><td>Es mīlu <strong>viņu</strong>.</td><td>I love her.</td></tr>
+    <tr><td>us</td><td><strong>mūs</strong></td><td>Viņi gaida <strong>mūs</strong>.</td><td>They are waiting for us.</td></tr>
+    <tr><td>them (masc./mixed)</td><td><strong>viņus</strong></td><td>Es redzu <strong>viņus</strong>.</td><td>I see them.</td></tr>
+    <tr><td>them (all female)</td><td><strong>viņas</strong></td><td>Es redzu <strong>viņas</strong>.</td><td>I see them (all female).</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Watch out:</strong> <em>viņu</em> means both "him" and "her" — context decides. And <em>viņas</em>
+  is both the subject "they (all female)" and the object "them (all female)." Word order and verb agreement tell you which.
+</div>
+
+<div class="exercise" id="ex2">
+  <h4>Exercise 2 — Replace the noun with the correct accusative pronoun</h4>
+  <ol>
+    <li>Es redzu (the man). &rarr; Es redzu <input class="answer" data-answer="viņu|vinu">.</li>
+    <li>Viņš gaida (me). &rarr; Viņš gaida <input class="answer" data-answer="mani">.</li>
+    <li>Mēs pazīstam (you - sg.). &rarr; Mēs pazīstam <input class="answer" data-answer="tevi">.</li>
+    <li>Viņa mīl (him). &rarr; Viņa mīl <input class="answer" data-answer="viņu|vinu">.</li>
+    <li>Es gaidu (us). &rarr; Es gaidu <input class="answer" data-answer="mūs|mus">.</li>
+    <li>Bērni redz (them - all girls). &rarr; Bērni redz <input class="answer" data-answer="viņas|vinas">.</li>
+    <li>Translate: "I know you (informal)." <input class="answer answer-wide" data-answer="es pazīstu tevi|es pazistu tevi">.</li>
+    <li>Translate: "She sees me." <input class="answer answer-wide" data-answer="viņa redz mani|vina redz mani">.</li>
+  </ol>
+  <div class="btn-row">
+    <button onclick="checkExercise('ex2')">Check answers</button>
+    <button class="secondary" onclick="revealExercise('ex2')">Show all answers</button>
+    <button class="secondary" onclick="resetExercise('ex2')">Reset</button>
+  </div>
+  <div class="score" id="ex2-score"></div>
+</div>
+
+<!-- ================= 3. DATIVE ================= -->
+<h2>3. Indirect-Object Pronouns (dative — "to whom / for whom?")</h2>
+
+<p>Used after verbs like <em>dot</em> (to give), <em>teikt</em> (to say to), <em>palīdzēt</em> (to help),
+<em>zvanīt</em> (to call), and in the pattern <em>Man ir…</em> (I have…).</p>
+
+<table>
+  <thead><tr><th>English</th><th>Latvian</th><th>Example</th><th>Translation</th></tr></thead>
+  <tbody>
+    <tr><td>to me</td><td><strong>man</strong></td><td>Viņš man palīdz.</td><td>He helps me.</td></tr>
+    <tr><td>to you (sg.)</td><td><strong>tev</strong></td><td>Es tev zvanu.</td><td>I am calling you.</td></tr>
+    <tr><td>to you (formal / pl.)</td><td><strong>jums</strong></td><td>Es jums palīdzēšu.</td><td>I will help you.</td></tr>
+    <tr><td>to him</td><td><strong>viņam</strong></td><td>Es viņam teicu.</td><td>I told him.</td></tr>
+    <tr><td>to her</td><td><strong>viņai</strong></td><td>Es viņai palīdzu.</td><td>I help her.</td></tr>
+    <tr><td>to us</td><td><strong>mums</strong></td><td>Viņš mums palīdz.</td><td>He helps us.</td></tr>
+    <tr><td>to them (masc./mixed)</td><td><strong>viņiem</strong></td><td>Es viņiem saku.</td><td>I say to them.</td></tr>
+    <tr><td>to them (all female)</td><td><strong>viņām</strong></td><td>Es viņām saku.</td><td>I say to them (all female).</td></tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <strong>Key pattern:</strong> <em>Man ir</em> = "I have" (literally "to me is"). So <em>Tev ir</em> = you have,
+  <em>Viņam ir</em> = he has, <em>Mums ir</em> = we have. This is the single most useful dative pattern for beginners —
+  and it's why "I have" is not <em>Es ir</em>.
+</div>
+
+<div class="exercise" id="ex3">
+  <h4>Exercise 3 — Fill in the correct dative pronoun</h4>
+  <ol>
+    <li>(To me) <input class="answer" data-answer="man"> ir suns. (I have a dog.)</li>
+    <li>(To you - sg.) <input class="answer" data-answer="tev"> ir laiks? (Do you have time?)</li>
+    <li>(To him) <input class="answer" data-answer="viņam|vinam"> ir divi brāļi. (He has two brothers.)</li>
+    <li>(To her) <input class="answer" data-answer="viņai|vinai"> ir māsa. (She has a sister.)</li>
+    <li>(To us) <input class="answer" data-answer="mums"> ir jautri. (We are having fun.)</li>
+    <li>Viņš (to me) <input class="answer" data-answer="man"> palīdz.</li>
+    <li>Es (to them - mixed) <input class="answer" data-answer="viņiem|viniem"> saku "labdien."</li>
+    <li>Translate: "I give you (informal) a book." <input class="answer answer-wide" data-answer="es dodu tev grāmatu|es dodu tev gramatu">.</li>
+  </ol>
+  <div class="btn-row">
+    <button onclick="checkExercise('ex3')">Check answers</button>
+    <button class="secondary" onclick="revealExercise('ex3')">Show all answers</button>
+    <button class="secondary" onclick="resetExercise('ex3')">Reset</button>
+  </div>
+  <div class="score" id="ex3-score"></div>
+</div>
+
+<!-- ================= 4. MIXED ================= -->
+<h2>4. Mixed Practice — Choose the right form</h2>
+
+<div class="exercise" id="ex4">
+  <h4>Exercise 4 — Decide: subject, accusative, or dative?</h4>
+  <ol>
+    <li><input class="answer" data-answer="es"> (I) mīlu <input class="answer" data-answer="tevi"> (you - sg.).</li>
+    <li><input class="answer" data-answer="viņa|vina"> (She) redz <input class="answer" data-answer="viņu|vinu"> (him).</li>
+    <li><input class="answer" data-answer="mēs|mes"> (We) gaidām <input class="answer" data-answer="viņus|vinus"> (them - mixed).</li>
+    <li>Vai <input class="answer" data-answer="jūs|jus"> (you - formal) <input class="answer" data-answer="man"> (to me) palīdzēsiet?</li>
+    <li><input class="answer" data-answer="viņš|vins"> (He) <input class="answer" data-answer="viņai|vinai"> (to her) teica "sveiki."</li>
+    <li><input class="answer" data-answer="viņas|vinas"> (They - all female) <input class="answer" data-answer="mūs|mus"> (us) pazīst.</li>
+    <li>Translate: "I see you (informal) and you see me." <input class="answer answer-wide" data-answer="es redzu tevi un tu redzi mani">.</li>
+    <li>Translate: "She gives him a book." <input class="answer answer-wide" data-answer="viņa dod viņam grāmatu|vina dod vinam gramatu">.</li>
+    <li>Translate: "We help them (all female)." <input class="answer answer-wide" data-answer="mēs palīdzam viņām|mes palidzam vinam">.</li>
+    <li>Translate: "They (mixed) are waiting for us." <input class="answer answer-wide" data-answer="viņi gaida mūs|vini gaida mus">.</li>
+  </ol>
+  <div class="btn-row">
+    <button onclick="checkExercise('ex4')">Check answers</button>
+    <button class="secondary" onclick="revealExercise('ex4')">Show all answers</button>
+    <button class="secondary" onclick="resetExercise('ex4')">Reset</button>
+  </div>
+  <div class="score" id="ex4-score"></div>
+</div>
+
+<div class="callout">
+  <strong>Quick self-check before you move on:</strong> Can you say all of these from memory?
+  <em>es, tu, viņš, viņa, mēs, jūs, viņi, viņas</em> — then <em>mani, tevi, viņu, mūs, viņus</em> —
+  then <em>man, tev, viņam, viņai, mums, jums, viņiem, viņām</em>.
+  If one column feels shaky, redo the matching exercise above before continuing.
+</div>
+
+<script>
+/* Normalise an answer: lowercase, trim, collapse spaces,
+   map accented Latvian letters to plain Latin so learners
+   aren't punished for missing diacritics. */
+function normalise(s) {
+  return s
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, ' ')
+    .replace(/ā/g, 'a').replace(/č/g, 'c').replace(/ē/g, 'e')
+    .replace(/ģ/g, 'g').replace(/ī/g, 'i').replace(/ķ/g, 'k')
+    .replace(/ļ/g, 'l').replace(/ņ/g, 'n').replace(/š/g, 's')
+    .replace(/ū/g, 'u').replace(/ž/g, 'z');
+}
+
+function acceptableAnswers(raw) {
+  return raw.split('|').map(function (s) { return normalise(s); });
+}
+
+function checkExercise(id) {
+  var ex = document.getElementById(id);
+  var inputs = ex.querySelectorAll('input.answer');
+  var correct = 0;
+  inputs.forEach(function (input) {
+    var accepted = acceptableAnswers(input.dataset.answer);
+    var val = normalise(input.value);
+    var ok = val !== '' && accepted.indexOf(val) !== -1;
+    input.classList.remove('correct', 'wrong');
+    input.classList.add(ok ? 'correct' : 'wrong');
+    if (ok) correct++;
+  });
+  var scoreEl = document.getElementById(id + '-score');
+  scoreEl.textContent = 'Score: ' + correct + ' / ' + inputs.length +
+    (correct === inputs.length ? ' — perfect!' : '');
+}
+
+function revealExercise(id) {
+  var ex = document.getElementById(id);
+  var inputs = ex.querySelectorAll('input.answer');
+  inputs.forEach(function (input) {
+    var first = input.dataset.answer.split('|')[0];
+    input.value = first;
+    input.classList.remove('correct', 'wrong');
+    input.classList.add('correct');
+  });
+  document.getElementById(id + '-score').textContent =
+    'All answers shown. Press Reset to try again.';
+}
+
+function resetExercise(id) {
+  var ex = document.getElementById(id);
+  var inputs = ex.querySelectorAll('input.answer');
+  inputs.forEach(function (input) {
+    input.value = '';
+    input.classList.remove('correct', 'wrong');
+  });
+  document.getElementById(id + '-score').textContent = '';
+}
+
+/* Let Enter trigger a check in the exercise the user is typing in. */
+document.querySelectorAll('input.answer').forEach(function (input) {
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      var ex = input.closest('.exercise');
+      if (ex) checkExercise(ex.id);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
